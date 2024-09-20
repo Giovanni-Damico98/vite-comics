@@ -1,7 +1,26 @@
-<script setup> </script>
+<script>
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppHero from "./components/AppHero.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppHeader from "./components/AppHeader.vue";
 
-<template></template>
+export default {
+  components: {
+    AppHeader,
+    AppMain,
+    AppFooter,
+    AppHero,
+  },
+};
+</script>
 
-<style lang="scss">
+<template>
+  <AppHeader />
+  <AppMain />
+  <AppFooter />
+  <AppHero />
+</template>
 
-</style>
+<style lang="scss"></style>
