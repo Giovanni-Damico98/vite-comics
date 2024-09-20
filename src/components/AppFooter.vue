@@ -77,7 +77,11 @@ export default {
         class="footer-jumbotron container d-flex align-items-center justify-content-between"
       >
         <div class="sign-up col-7">
-          <button type="button" class="btn btn-outline-primary text-white">
+          <button
+            type="button"
+            class="btn btn-outline-primary text-white"
+            id="footer-btn"
+          >
             SIGN-UP NOW!
           </button>
         </div>
@@ -142,5 +146,9 @@ ul {
   a {
     text-decoration: none;
   }
+}
+
+#footer-btn:active {
+  scale: 1.1;
 }
 </style>

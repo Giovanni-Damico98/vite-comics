@@ -1,30 +1,184 @@
 <script>
+import AppMainCard from "./AppMainCard.vue";
+
 export default {
   data() {
     return {
-      name: "AppMain",
+      comicsList: [
+        {
+          thumb: "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
+          price: "$19.99",
+          series: "Action Comics",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://www.panini.it/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/M/1/M1BLLA015ISBN_0.jpg",
+          price: "$3.99",
+          series: "American Vampire 1976",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://media.wired.com/photos/593384dad80dd005b42b2817/master/w_2560%2Cc_limit/Aquaman-16.jpg",
+          price: "$16.99",
+          series: "Aquaman",
+          type: "graphic novel",
+        },
+        {
+          thumb: "https://d29xot63vimef3.cloudfront.net/image/batgirl/1-1.jpg",
+          price: "$2.99",
+          series: "Batgirl",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.posters.cz/image/750/locandine-film-in-plexiglass-batman-prowl-comic-cover-i69653.jpg",
+          price: "$3.99",
+          series: "Batman",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/5/50/Batman_Beyond_v.1_1.jpg",
+          price: "$2.99",
+          series: "Batman Beyond",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/0/0d/Batman_Superman_Vol_1_1.jpg",
+          price: "$3.99",
+          series: "Batman/Superman",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/c/cf/Batman_Superman_Annual_Vol_2_1.jpg",
+          price: "$4.99",
+          series: "Batman/Superman Annual",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/5/54/Batman_The_Joker_War_Zone_Vol_1_1.jpg",
+          price: "$5.99",
+          series: "Batman: The Joker War Zone",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/6/64/Batman_Three_Jokers_Collected.jpg",
+          price: "$6.99",
+          series: "Batman: Three Jokers",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
+          price: "$4.99",
+          series: "Batman: White Knight Presents: Harley Quinn",
+          type: "comic book",
+        },
+        {
+          thumb:
+            "https://static.wikia.nocookie.net/marvel_dc/images/c/c8/Catwoman_Vol_2_1.jpg",
+          price: "$16.99",
+          series: "Catwoman",
+          type: "graphic novel",
+        },
+      ],
     };
+  },
+  components: {
+    AppMainCard,
   },
 };
 </script>
 
 <template>
-  <section class="main-content d-flex align-items-center">
-    <div class="container">
-      <h1>-->Content Goes Here<--</h1>
+  <main>
+    <div class="col-12" id="jumbo"></div>
+    <span class="current-series">CURRENT SERIES</span>
+    <div class="container-lg pb-4">
+      <div class="row">
+        <div
+          class="col-lg-2 col-md-4 col-sm-6 mb-5"
+          v-for="comic in comicsList"
+          :key="comic.series"
+        >
+          <AppMainCard :Thumb="comic.thumb" :Series="comic.series" />
+        </div>
+      </div>
+
+      <button class="load-btn">LOAD MORE</button>
     </div>
-  </section>
+  </main>
 </template>
 
-<style scoped lang="scss">
-.main-content {
-  background-color: #1c1c1c;
-  padding: 20px 0;
-  height: 120px;
-  color: white;
+<style lang="scss" scoped>
+#jumbo {
+  width: 100%;
+  height: 350px;
+  background-image: url("../assets/img/jumbotron.jpg");
+  background-size: cover;
+  background-position: top 20%;
+  margin-bottom: 50px;
+  position: relative;
+}
 
-  h1 {
-    font-size: 30px;
+.current-series {
+  position: absolute;
+  top: 420px;
+  left: 20%;
+  transform: translateX(-50%);
+  background-color: #0282f9;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-lg {
+  position: relative;
+}
+
+main {
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  background-color: #222;
+}
+
+main .row {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: calc(100% / 6);
+}
+
+.load-btn {
+  padding: 6px 46px;
+  margin-top: 30px;
+  font-family: "Open sans condensed";
+  font-weight: 600;
+  color: #fff;
+  border: 3px solid #0282f9;
+  background-color: #0282f9;
+  font-size: 0.8rem;
+
+  &:hover {
+    scale: 1.1;
+  }
+  &:active {
+    scale: 1;
   }
 }
 </style>
