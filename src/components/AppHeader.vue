@@ -18,20 +18,18 @@ export default {
     };
   },
   methods: {
-    methods: {
-      activeIndex(index) {
-        this.navList.forEach((item, i) => {
-          item.active = i === index;
-        });
-      },
+    activeIndex(index) {
+      this.navList.forEach((item, i) => {
+        item.active = i === index;
+      });
     },
   },
 };
 </script>
 
 <template>
-  <div class="container d-flex align-items-center justify-content-center mt-2">
-    <div class="logo col-2">
+  <div class="container d-flex align-items-center justify-content-center my-2">
+    <div class="logo">
       <img src="../assets/img/dc-logo.png" alt="DC Logo" />
     </div>
     <nav class="col-10">
@@ -52,10 +50,13 @@ export default {
 <style scoped>
 .nav-menu li {
   cursor: pointer;
+  padding: 20px 0;
 }
 
 li.active {
-  color: blueviolet;
+  color: #0282f9;
+  border-bottom: 10px solid #0282f9;
+  padding: 15px 0;
 }
 
 .logo img {

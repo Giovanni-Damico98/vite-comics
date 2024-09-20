@@ -1,15 +1,15 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppLinks from "./components/AppLinks.vue";
 import AppFooter from "./components/AppFooter.vue";
-import AppHero from "./components/AppHero.vue";
 
 export default {
   components: {
     AppHeader,
     AppMain,
+    AppLinks,
     AppFooter,
-    AppHero,
   },
 };
 </script>
@@ -17,8 +17,8 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
+  <AppLinks />
   <AppFooter />
-  <AppHero />
 </template>
 
 <style lang="scss"></style>
